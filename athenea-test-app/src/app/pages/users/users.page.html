@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Usuaris</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-col size="12">
+      <ion-searchbar (ionChange)="searchUsers($event)"></ion-searchbar>
+    </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="table">
+    <ion-row class="table-header">
+      <ion-col (click)="sortUsers(1)">
+        Nom
+        <ion-icon name="arrow-up" [ngStyle]="{'display': (lastClick == 1) ? ((clickState == 1) ? '' : 'none') : 'none'}" />
+        <ion-icon name="arrow-down"[ngStyle]="{'display': (lastClick == 1) ? ((clickState == 2) ? '' : 'none') : 'none'}" />
+      </ion-col>
+      <ion-col (click)="sortUsers(2)">
+        Cognom
+        <ion-icon name="arrow-up" [ngStyle]="{'display': (lastClick == 2) ? ((clickState == 1) ? '' : 'none') : 'none'}" />
+        <ion-icon name="arrow-down"[ngStyle]="{'display': (lastClick == 2) ? ((clickState == 2) ? '' : 'none') : 'none'}" />
+      </ion-col>
+      <ion-col (click)="sortUsers(3)">
+        Email
+        <ion-icon name="arrow-up" [ngStyle]="{'display': (lastClick == 3) ? ((clickState == 1) ? '' : 'none') : 'none'}" />
+        <ion-icon name="arrow-down"[ngStyle]="{'display': (lastClick == 3) ? ((clickState == 2) ? '' : 'none') : 'none'}" />
+      </ion-col>
+      <ion-col (click)="sortUsers(4)">
+        DNI
+        <ion-icon name="arrow-up" [ngStyle]="{'display': (lastClick == 4) ? ((clickState == 1) ? '' : 'none') : 'none'}" />
+        <ion-icon name="arrow-down"[ngStyle]="{'display': (lastClick == 4) ? ((clickState == 2) ? '' : 'none') : 'none'}" />
+      </ion-col>
+    </ion-row>
+    <a [routerLink]="[user.dni]" *ngFor="let user of usersFinal" class="table-content">
+      <ion-row>
+        <ion-col>{{user.nom}}</ion-col>
+        <ion-col>{{user.cognom}}</ion-col>
+        <ion-col>{{user.email}}</ion-col>
+        <ion-col>{{user.dni}}</ion-col>
+      </ion-row>
+    </a>
+  </ion-grid>
+  <!-- <pagination-controls (pageChange)="p = $event" class="pagination-end"></pagination-controls> -->
+</ion-content>

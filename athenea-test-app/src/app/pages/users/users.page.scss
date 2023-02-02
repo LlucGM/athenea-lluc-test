@@ -1,0 +1,71 @@
+.table {
+    width: 90%;
+    max-height: calc(100% - 55px);
+    overflow: scroll;
+
+    a:last-of-type {
+        ion-row {
+            border-radius: 0 0 5px 5px;
+        }
+    }
+}
+
+.table-header { 
+
+    ion-col {
+        background-color: grey;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    ion-col:first-of-type{
+        border-top-left-radius: 5px;
+    }
+
+    ion-col:last-of-type{
+        border-top-right-radius: 5px;
+    }
+}
+
+.table-content ion-col {
+    overflow: auto;
+}
+
+a.table-content:nth-child(even) ion-row {
+    background-color: #6b6b6b;
+}
+
+a.table-content:nth-child(odd) ion-row {
+    background-color: #555555;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+::ng-deep .ngx-pagination {
+    padding: 0;
+
+    a {
+	    text-decoration: none;
+	    color: inherit!important;
+    }
+}
+
+.pagination-end {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.download {
+    ion-icon {
+        width: 75%;
+        height: 80%;
+    }
+}

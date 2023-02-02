@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button class="customMenuButton"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="header">
+    <div class="profileBackground"></div>
+    <div class="profilePicture">
+      <ion-icon name="person"></ion-icon>
+    </div>
+  </div>
+  <div class="info">
+    <ion-item class="ion-no-padding">
+      <ion-label>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input [readonly]="true">{{user.nom}}</ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label>
+        <ion-icon name="person"></ion-icon>
+      </ion-label>
+      <ion-input [readonly]="true">{{user.cognom}}</ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label>
+        <ion-icon name="at"></ion-icon>
+      </ion-label>
+      <ion-input [readonly]="true">{{user.email}}</ion-input>
+    </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label>
+        <ion-icon name="card"></ion-icon>
+      </ion-label>
+      <ion-input [readonly]="true">{{user.dni}}</ion-input>
+    </ion-item>
+  </div>
+</ion-content>

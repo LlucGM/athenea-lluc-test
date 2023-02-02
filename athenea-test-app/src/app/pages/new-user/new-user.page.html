@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nou usuari</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="submitForm()" class="form-newUser">
+    <ion-item class="ion-no-padding" counter="true">
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input [(ngModel)]="user.nom" name="name"/>
+    </ion-item>
+    <ion-item class="ion-no-padding" counter="true">
+      <ion-label position="floating">Cognom</ion-label>
+      <ion-input [(ngModel)]="user.cognom" name="surname"/>
+    </ion-item>
+    <ion-item class="ion-no-padding" counter="true">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="user.email" name="email"/>
+    </ion-item>
+    <ion-item class="ion-no-padding" counter="true">
+      <ion-label position="floating">DNI</ion-label>
+      <ion-input [(ngModel)]="user.dni" name="id"/>
+    </ion-item>
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-button type="submit">+</ion-button>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
