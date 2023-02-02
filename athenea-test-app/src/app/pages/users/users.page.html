@@ -37,6 +37,10 @@
       </ion-col>
     </ion-row>
     <a [routerLink]="[user.dni]" *ngFor="let user of usersFinal" class="table-content">
+      <!-- | paginate: {
+        itemsPerPage: 10,
+        currentPage: p
+      }; -->
       <ion-row>
         <ion-col>{{user.nom}}</ion-col>
         <ion-col>{{user.cognom}}</ion-col>
